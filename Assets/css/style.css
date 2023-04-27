@@ -1,0 +1,118 @@
+/* GENERAL STYLE */
+:root {
+    --pink: #FEDDD5;
+    --blue: #246D82;
+    --green: #869F76;
+    --height: 6.25rem; 
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poiret One', cursive;
+}
+
+img {max-width: 100%;}
+
+/* BACKGROUND STYLE */
+.bgPink        {background-color: var(--pink);}
+.bgGreen       {background-color: var(--green);}
+.bgBlue        {background-color: var(--blue);} 
+
+/* FLEX & DISPLAY STYLE */
+.dNone         {display: none;}
+.dBlock        {display: block;}
+.dFlex         {display: flex;}
+.justyCenter   {justify-content: center;}
+.alignCenter   {align-items: center;}
+.justySpaceBtw {justify-content: space-between;}
+.justySpaceEve {justify-content: space-evenly;}
+.fWrap         {flex-wrap: wrap;}
+.gap1em        {gap: 1em;}
+
+/* EXTRA GENERIC STYLE */
+.cPointer      {cursor: pointer;}
+.textAlignCent {text-align: center;}
+.pad1em        {padding: 1em;}
+.border        {border: 1px solid var(--green);}
+.w100Perc      {width: 100%;}
+
+/* HEADER STYLE */
+header {
+    height: var(--height);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header img {
+    width: 5rem;
+    display: block;
+}
+
+h1 {
+    color: var(--green);
+    font-weight: 900;
+}
+
+header select {
+    border: .5px solid var(--green);
+    font-size: .8rem;
+    padding: .2em .3em;
+    margin: 0 1em 0 .3em;
+    letter-spacing: 2px;
+}
+
+button {
+    letter-spacing: .2rem;
+    padding: .6em 1em;
+    font-size: large;
+    font-weight: 900;
+    border: .5px solid var(--green);
+}
+
+button:hover {
+    color: var(--green);
+    box-shadow: 0px 7px 15px 1px rgba(170, 170, 170, 0.86);
+}
+
+/* MAIN STYLE */
+main {
+    background-color: rgb(34, 28, 33);
+    color: antiquewhite;
+    height: calc(100vh - var(--height) - (var(--height) / 2) );
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+main > section {
+    margin: 0 auto;
+}
+
+#grid {
+    width: 500px;
+    height: 500px;
+}
+
+.box {
+    font-size: .94rem;
+}
+
+.box:hover {
+    color: var(--green);
+    font-size: larger;
+    background-color: rgb(66, 62, 66);
+    font-family: 'Rubik Microbe', cursive;
+}
+
+.boxClicked,
+.box:active {
+    background-color: var(--blue);
+    font-family: 'Rubik Microbe', cursive;
+}
+
+/* FOOTER STYLE */
+footer {
+    height: var(--height) / 2;
+}

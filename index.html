@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./Assets/img/favicon.ico">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rubik+Microbe&display=swap" rel="stylesheet">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <title>Griglia Campo Minato</title>
+</head>
+<body>
+    <header class="w100Perc pad1em">
+        <div class="dFlex alignCenter justySpaceBtw">
+            <div class="dFlex alignCenter"> 
+                <img src="./Assets/img/logo.png" alt="boolean-logo">
+                <h1>MINE SWEEPER 55</h1>
+            </div>
+            <div class="dFlex alignCenter">
+                <label for="level">Level: </label>
+                <select id="level" class="cPointer">
+                    <option value="100" selected>EASY</option>
+                    <option value="81">MEDIUM</option>
+                    <option value="49">HARD</option>
+                </select>
+                <button id="playGame" class="bgPink cPointer">PLAY</button>
+            </div>
+        </div>
+    </header>
+    <main class="w100Perc">
+        <section id="gridSec" class="dFlex justyCenter alignCenter"></section>
+    </main>
+    <footer class="w100Perc dFlex alignCenter pad1em justyCenter">
+        <h4>Made with 💚 by Classe 95</h6>
+    </footer>
+    <!-- Script JS -->
+    <script lang="javascript" src="./Assets/js/main.js"></script>
+</body>
+</html>
