@@ -45,11 +45,22 @@ function startGame() {
         // Click on single Boxes
         box.addEventListener("click", function() {
 
-            this.classList.toggle('boxClicked');
-            console.log("Click on box number:", stamp);
+            // Check for bombs
+            if (bomb.includes(stamp)) {
 
+                // If the box contains a bomb
+                this.classList.add('boxBoom');
+                console.warn("A bomb exploded! Click on box number:", stamp);
+                this.innerText = "💣";
+                this.style.fontSize = "22px";
+        
+            } else {
+
+                // If the box doesn't contain a bomb
+                this.classList.toggle('boxClicked');
+                console.log("Click on box number:", stamp);
+            } 
         })
-
     }
 
     // Add Grid with Boxes inside DOM

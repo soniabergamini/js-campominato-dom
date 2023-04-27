@@ -1,6 +1,6 @@
 /* GENERAL STYLE */
 :root {
-    --pink: #FEDDD5;
+    --red: #FF6863;
     --blue: #246D82;
     --green: #869F76;
     --height: 6.25rem; 
@@ -13,13 +13,6 @@
     margin: 0;
     font-family: 'Poiret One', cursive;
 }
-
-img {max-width: 100%;}
-
-/* BACKGROUND STYLE */
-.bgPink        {background-color: var(--pink);}
-.bgGreen       {background-color: var(--green);}
-.bgBlue        {background-color: var(--blue);} 
 
 /* FLEX & DISPLAY STYLE */
 .dNone         {display: none;}
@@ -109,6 +102,11 @@ main > section {
 .boxClicked,
 .box:active {
     background-color: var(--blue);
+    font-family: 'Rubik Microbe', cursive;
+}
+
+.boxBoom {
+    background-color: var(--red);
     font-family: 'Rubik Microbe', cursive;
 }
 
