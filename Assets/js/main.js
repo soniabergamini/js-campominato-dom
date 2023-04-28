@@ -57,35 +57,32 @@ function startGame() {
         // Click on single Boxes
         box.addEventListener("click", function boxClick() {
 
-            // Check for bombs
-            if (bomb.includes(stamp)) {
+            // If game is not over
+            if (gameIsOver == false) {
 
-                // If the box contains a bomb
-                this.classList.add('boxBoom');
-                console.warn("A bomb exploded! Click on box number:", stamp);
-                this.innerText = "💣";
-                this.style.fontSize = "22px";
-                grid.style.animation = "shake .2s";
-                grid.style.animationIterationCount = "5";
-                bombClick = true;
+                // Check for bombs
+                if (bomb.includes(stamp)) {
 
-                // Game Stop
-                for (let i = 0; i < gameLevel; i++) {
-                    allBoxes[i].removeEventListener("click", boxClick, false); // !!! Not Working
+                    // If the box contains a bomb
+                    this.classList.add('boxBoom');
+                    console.warn("A bomb exploded! Click on box number:", stamp);
+                    this.innerText = "💣";
+                    this.style.fontSize = "22px";
+                    grid.style.animation = "shake .2s";
+                    grid.style.animationIterationCount = "5";
+                    bombClick = true;
+
+                } else {
+
+                    // If the box doesn't contain a bomb
+                    this.classList.toggle('boxClicked');
+                    console.log("Click on box number:", stamp);
                 }
-        
-            } else {
 
-                // If the box doesn't contain a bomb
-                this.classList.toggle('boxClicked');
-                console.log("Click on box number:", stamp);
-
-            } 
-
-            // Score and check if game is over
-            scoring(gameLevel);
-
-        }, false)
+                // Score and check if game is over
+                scoring(gameLevel);
+            }
+        })
     }
 
     // Add Grid with Boxes inside DOM
@@ -127,6 +124,7 @@ function scoring(size) {
     if (score == size - bombTotal || bombClick === true) {
 
         resetGame();
+        gameIsOver = true;
         
         // console.warn("Game Over. Score:", score)
         // Score
@@ -145,7 +143,6 @@ function scoring(size) {
 
         // Game Stop
         gameStop(size);
-
     }
 }
 
@@ -156,7 +153,6 @@ function gameStop(size) {
     for (let i = 0; i < size; i++) {
         allBoxes[i].classList.remove("cPointer");
         allBoxes[i].classList.add("gameStop");
-        // allBoxes[i].removeEventListener("click", boxClick, false); // !!! Not Working
     }
 }
 
@@ -177,6 +173,7 @@ const bombTotal = 16;
 let gameSize;
 let box;
 let bombClick;
+let gameIsOver = false;
 
 // EVENTS
 btnPlay.addEventListener("click", startGame);
