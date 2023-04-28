@@ -125,6 +125,8 @@ function scoring(size) {
     let score = document.querySelectorAll(".boxClicked").length;
 
     if (score == size - bombTotal || bombClick === true) {
+
+        resetGame();
         
         // console.warn("Game Over. Score:", score)
         // Score
