@@ -7,7 +7,6 @@ function startGame() {
     resetGame();
 
     // Variables
-    bombClick = false;
     let bomb = [];
     const gameLevel = Number(document.getElementById('level').value);
     gameSize = Math.sqrt(gameLevel);   
@@ -123,7 +122,6 @@ function scoring(size) {
 
     if (score == size - bombTotal || bombClick === true) {
 
-        resetGame();
         gameIsOver = true;
         
         // console.warn("Game Over. Score:", score)
@@ -162,6 +160,8 @@ function resetGame() {
     msgScoring.classList.add('dNone');
     msgGameOver.innerText = "GAME OVER";
     msgGameOver.classList.add('dNone');
+    bombClick = false;
+    gameIsOver = false;
 }
 
 // VARIABLES
